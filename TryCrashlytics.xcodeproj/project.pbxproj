@@ -13,6 +13,8 @@
 		8D0AA58B1CCF246300B792EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0AA5891CCF246300B792EB /* Main.storyboard */; };
 		8D0AA58D1CCF246300B792EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D0AA58C1CCF246300B792EB /* Assets.xcassets */; };
 		8D0AA5901CCF246300B792EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D0AA58E1CCF246300B792EB /* LaunchScreen.storyboard */; };
+		8D0AA59A1CCF252500B792EB /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0AA5981CCF252500B792EB /* Fabric.framework */; };
+		8D0AA59B1CCF252500B792EB /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0AA5991CCF252500B792EB /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8D0AA58C1CCF246300B792EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D0AA58F1CCF246300B792EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D0AA5911CCF246300B792EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D0AA5981CCF252500B792EB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		8D0AA5991CCF252500B792EB /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0AA59B1CCF252500B792EB /* Crashlytics.framework in Frameworks */,
+				8D0AA59A1CCF252500B792EB /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,8 @@
 				8D0AA58C1CCF246300B792EB /* Assets.xcassets */,
 				8D0AA58E1CCF246300B792EB /* LaunchScreen.storyboard */,
 				8D0AA5911CCF246300B792EB /* Info.plist */,
+				8D0AA5981CCF252500B792EB /* Fabric.framework */,
+				8D0AA5991CCF252500B792EB /* Crashlytics.framework */,
 				8D0AA5801CCF246300B792EB /* Supporting Files */,
 			);
 			path = TryCrashlytics;
@@ -89,6 +97,7 @@
 				8D0AA5791CCF246300B792EB /* Sources */,
 				8D0AA57A1CCF246300B792EB /* Frameworks */,
 				8D0AA57B1CCF246300B792EB /* Resources */,
+				8D0AA5971CCF24DC00B792EB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -143,6 +152,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D0AA5971CCF24DC00B792EB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 25a2de7c1631fcc979c1d1d516950e18fdd24f5a 456557e49db67d2c4fe22f4a06efe5413a884c104a14e5f70374bc39757fd036";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D0AA5791CCF246300B792EB /* Sources */ = {
@@ -265,6 +290,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TryCrashlytics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = local.TryCrashlytics;
@@ -276,6 +306,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TryCrashlytics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = local.TryCrashlytics;
